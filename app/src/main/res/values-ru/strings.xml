@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Angles</string>
+    <string name="app_name">Токарные углы</string>
     <string name="title_settings">Настройки</string>
-    <string name="title_rotationToolHolder" translatable="false">Угол наклона резцедержателя</string>
-    <string name="title_arctg" translatable="false">Угол треугольника</string>
+    <string name="title_rotationToolHolder" >Угол наклона резцедержателя</string>
+    <string name="title_arctg">Угол треугольника</string>
     <string name="SettingsBodyText">Это страница настроек. Скоро здесь что-нибудь появится.</string>
 </resources>
