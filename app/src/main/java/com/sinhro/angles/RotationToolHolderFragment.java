@@ -23,7 +23,7 @@ public class RotationToolHolderFragment extends Fragment {
     private EditText D_editText;
     private EditText d_editText;
     private EditText L_editText;
-    private TextView alpha_TextView;
+    private TextView alpha_textView;
 
     Formula formula;
 
@@ -31,7 +31,7 @@ public class RotationToolHolderFragment extends Fragment {
         D_editText = v.findViewById(R.id.editText_D);
         d_editText = v.findViewById(R.id.editText_d);
         L_editText = v.findViewById(R.id.editText_L);
-        alpha_TextView = v.findViewById(R.id.textView_alpha_RotAngToolHold);
+        alpha_textView = v.findViewById(R.id.textView_alpha_RotAngToolHold);
     }
 
     @Override
@@ -50,7 +50,13 @@ public class RotationToolHolderFragment extends Fragment {
         formula = new Formula(new MyConsumer<Float>() {
             @Override
             public void accept(Float aFloat) {
-                alpha_TextView.setText(String.valueOf(aFloat));
+                if (aFloat == null) {
+                    alpha_textView.setText("");
+                }
+                else {
+                    alpha_textView.setText(String.valueOf(aFloat));
+                    alpha_textView.append(getResources().getText(R.string.degree_symbol));
+                }
             }
         });
 
@@ -93,7 +99,7 @@ public class RotationToolHolderFragment extends Fragment {
 
         @Override
         public Float calcFormula() {
-            return ((float) Math.atan(Math.toRadians(((D - d) / 2) / L)));
+            return ((float) Math.toDegrees(Math.atan(((D - d) / 2) / L)));
         }
 
         @Override

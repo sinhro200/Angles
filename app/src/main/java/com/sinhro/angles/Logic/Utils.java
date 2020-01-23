@@ -5,7 +5,7 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 
 public class Utils {
-    public static void setTextChangedListener(EditText editText, final MyConsumer<Float> text){
+    public static void setTextChangedListener(EditText editText, final MyConsumer<Float> onNewFloatValueReady){
         editText.addTextChangedListener(new TextWatcher() {
             CharSequence recovered;
             boolean shouldReset = false;
@@ -21,10 +21,12 @@ public class Utils {
                         float val = Float.valueOf(s.toString());
                         if (val < 0)
                             throw new Exception();
-                        text.accept(val);
+                        onNewFloatValueReady.accept(val);
                     }catch (Exception e){
                         shouldReset = true;
                     }
+                else
+                    onNewFloatValueReady.accept(null);
             }
 
             @Override

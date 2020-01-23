@@ -6,5 +6,6 @@
     <dimen name="bigTextSize">22sp</dimen>
     <dimen name="minWidthEditText">60dp</dimen>
     <dimen name="maxWidthEditText">120dp</dimen>
+    <dimen name="imageHeight">200dp</dimen>
 
 </resources>

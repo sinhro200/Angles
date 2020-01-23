@@ -43,14 +43,23 @@ public class ArctgFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View body =inflater.inflate(R.layout.arctg_fragment, container, false);
+        findElems(body);
         TextView title = body.findViewById(R.id.title);
         title.setText(R.string.title_arctg);
 
         formula = new Formula(new MyConsumer<Float>() {
             @Override
             public void accept(Float aFloat) {
-                alpha_textView.setText(String.valueOf(aFloat));
-                beta_textView.setText(String.valueOf(90-aFloat));
+                if (aFloat == null) {
+                    alpha_textView.setText("");
+                    beta_textView.setText("");
+                }
+                else {
+                    alpha_textView.setText(String.valueOf(aFloat));
+                    alpha_textView.append(getResources().getText(R.string.degree_symbol));
+                    beta_textView.setText(String.valueOf(90 - aFloat));
+                    beta_textView.append(getResources().getText(R.string.degree_symbol));
+                }
             }
         });
 
@@ -84,7 +93,7 @@ public class ArctgFragment extends Fragment {
 
         @Override
         public Float calcFormula() {
-            return ((float) Math.atan(Math.toRadians(a / b)));
+            return ((float) Math.toDegrees(Math.atan(a / b)));
         }
 
         @Override

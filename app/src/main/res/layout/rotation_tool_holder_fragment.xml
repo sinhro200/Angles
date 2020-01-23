@@ -26,9 +26,9 @@
             >
             <ImageView
                 android:id="@+id/imageView_triangle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/triangle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/imageHeight"
+                app:srcCompat="@drawable/tool_holder"
                 android:contentDescription="Image" />
 
             <LinearLayout

@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">Angles</string>
     <string name="title_settings">Settings</string>
-    <string name="title_rotationToolHolder">rotation tool holder</string>
-    <string name="title_arctg">arctg</string>
-    <string name="alpha">alpha</string>
-    <string name="beta">beta</string>
-    <string name="toolHolderRotationAngle">Tool holder rotation angle</string>
-    <string name="titleHint">title</string>
-    <string name="b_sideOfTriangle">b</string>
-    <string name="a_sideOfTriangle">a</string>
-    <string name="dash">-</string>
-    <string name="d_innerDiameter">d</string>
-    <string name="D_outsideDiameter">D</string>
-    <string name="L">L</string>
+    <string name="title_rotationToolHolder">Rotation angle tool holder</string>
+    <string name="title_arctg">Triangle angles</string>
+    <string name="alpha" translatable="false">&#945;</string>
+    <string name="beta" translatable="false">&#946;</string>
+    <string name="b_sideOfTriangle" translatable="false">b</string>
+    <string name="a_sideOfTriangle" translatable="false">a</string>
+    <string name="equals_symbol" translatable="false">=</string>
+    <string name="d_innerDiameter" translatable="false">d</string>
+    <string name="D_outsideDiameter" translatable="false">D</string>
+    <string name="L" translatable="false">L</string>
+    <string name="degree_symbol" translatable="false">&#176;</string>
+    <string name="SettingsBodyText">This is settings page. Soon...</string>
 </resources>

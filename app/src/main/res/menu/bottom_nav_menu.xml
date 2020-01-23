@@ -3,17 +3,19 @@
 
     <item
         android:id="@+id/navigation_settings"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_settings" />
+        android:icon="@drawable/settings"
+        android:title="@string/title_settings"
+        />
 
     <item
         android:id="@+id/navigation_rotationToolHolder"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_rotationToolHolder" />
+        android:icon="@drawable/tool_holder_icon3"
+        android:title="@string/title_rotationToolHolder"
+        />
 
     <item
         android:id="@+id/navigation_arctg"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:icon="@drawable/triangle_icon3"
         android:title="@string/title_arctg" />
 
 </menu>

@@ -11,6 +11,8 @@ public abstract class AFormula {
     protected void checkIsReady(){
         if (isAllArgumentsReady())
             onAnswerReady.accept(calcFormula());
+        else
+            onAnswerReady.accept(null);
     }
 
     public abstract void initArguments();
