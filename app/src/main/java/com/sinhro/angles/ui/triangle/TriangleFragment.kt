@@ -10,6 +10,8 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.sinhro.angles.databinding.FragmentTriangleBinding
+import com.sinhro.angles.storage.Storage
+import com.sinhro.angles.ui.requireMainActivity
 import com.sinhro.angles.ui.toPrettyString
 
 class TriangleFragment : Fragment() {
@@ -28,8 +30,6 @@ class TriangleFragment : Fragment() {
     ): View {
         _binding = FragmentTriangleBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        binding.namedEditValueA.namedEditValueEditText.imeOptions = EditorInfo.IME_ACTION_DONE
 
         triangleViewModel.alpha.observe(viewLifecycleOwner, {
             binding.fragmentTriangleAlphaLayout.apply {
@@ -102,6 +102,11 @@ class TriangleFragment : Fragment() {
                     binding.namedEditValueC.namedEditValueTitleTv.paintFlags or Paint.UNDERLINE_TEXT_FLAG
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        requireMainActivity().storage.lastOpenedPage = Storage.Page.TrianglePage
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

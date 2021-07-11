@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.sinhro.angles.databinding.FragmentRotationToolHolderBinding
+import com.sinhro.angles.storage.Storage
+import com.sinhro.angles.ui.requireMainActivity
 import com.sinhro.angles.ui.toPrettyString
 
 class RotationToolHolderFragment : Fragment() {
@@ -52,6 +54,11 @@ class RotationToolHolderFragment : Fragment() {
             }
         }
         return root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        requireMainActivity().storage.lastOpenedPage = Storage.Page.RotationToolHolderPage
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
