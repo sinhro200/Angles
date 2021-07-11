@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.inputmethod.EditorInfo" />
+
+        <variable
+            name="valueTitle"
+            type="String" />
+
+        <variable
+            name="isLastEdit"
+            type="Boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/named_edit_value_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{valueTitle}"
+            android:textSize="@dimen/defTextSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        <include-->
+        <!--            android:id="@+id/named_edit_value_dash"-->
+        <!--            layout="@layout/dash_text_view"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintStart_toEndOf="@+id/named_edit_value_title_tv" />-->
+        <TextView
+            android:id="@+id/named_edit_value_dash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="@string/equals_symbol"
+            android:textSize="@dimen/defTextSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/named_edit_value_title_tv"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/named_edit_value_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autofillHints="value"
+            android:imeOptions="@{isLastEdit?EditorInfo.IME_ACTION_DONE:EditorInfo.IME_ACTION_NEXT}"
+            android:inputType="numberDecimal"
+            android:maxWidth="@dimen/maxWidthEditText"
+            android:minWidth="@dimen/minWidthEditText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/named_edit_value_dash"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

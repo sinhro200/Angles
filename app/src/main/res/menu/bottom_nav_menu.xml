@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/navigation_settings"
-        android:icon="@drawable/settings"
-        android:title="@string/title_settings"
-        />
-
-    <item
-        android:id="@+id/navigation_rotationToolHolder"
-        android:icon="@drawable/tool_holder_icon3"
-        android:title="@string/title_rotationToolHolder"
-        />
-
-    <item
-        android:id="@+id/navigation_arctg"
+        android:id="@+id/navigation_triangle"
         android:icon="@drawable/triangle_icon3"
-        android:title="@string/title_arctg" />
+        app:showAsAction="ifRoom"
+        android:title="@string/title_triangle" />
+
+    <item
+        android:id="@+id/navigation_rotation_tool_holder"
+        android:icon="@drawable/tool_holder_icon3"
+        app:showAsAction="ifRoom"
+        android:title="@string/title_rotation_tool_holder" />
+
+    <item
+        android:id="@+id/invisible"
+        android:visible="false"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="@string/title_settings" />
 
 </menu>

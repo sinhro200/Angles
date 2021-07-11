@@ -3,14 +3,20 @@
     <string name="title_settings">Settings</string>
     <string name="title_rotationToolHolder">Rotation angle tool holder</string>
     <string name="title_arctg">Triangle angles</string>
+    <string name="a_sideOfTriangle" translatable="false">a</string>
+    <string name="b_sideOfTriangle" translatable="false">b</string>
+    <string name="c_sideOfTriangle" translatable="false">c</string>
+    <string name="SettingsBodyText">This is settings page. Will be available soon...</string>
+<!--    -->
+    <string name="title_triangle">Triangle</string>
+    <string name="title_rotation_tool_holder">RotationToolHolder</string>
+    <string name="d_sideOfToolHolder" translatable="false">d</string>
+    <string name="D_sideOfToolHolder" translatable="false">D</string>
+    <string name="L_sideOfToolHolder" translatable="false">L</string>
+    <string name="equals_symbol" translatable="false">=</string>
     <string name="alpha" translatable="false">&#945;</string>
     <string name="beta" translatable="false">&#946;</string>
-    <string name="b_sideOfTriangle" translatable="false">b</string>
-    <string name="a_sideOfTriangle" translatable="false">a</string>
-    <string name="equals_symbol" translatable="false">=</string>
-    <string name="d_innerDiameter" translatable="false">d</string>
-    <string name="D_outsideDiameter" translatable="false">D</string>
-    <string name="L" translatable="false">L</string>
     <string name="degree_symbol" translatable="false">&#176;</string>
-    <string name="SettingsBodyText">This is settings page. Will be available soon...</string>
+    <string name="min_symbol" translatable="false">&#8242;</string>
+    <string name="sec_symbol" translatable="false">&#8243;</string>
 </resources>

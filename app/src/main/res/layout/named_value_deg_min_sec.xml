@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+
+        <variable
+            name="valueTitle"
+            type="String" />
+
+        <variable
+            name="valueDeg"
+            type="Integer" />
+
+        <variable
+            name="valueMin"
+            type="Integer" />
+
+        <variable
+            name="valueSec"
+            type="Integer" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/named_edit_value_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{valueTitle}"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="@dimen/defTextSize" />
+
+        <TextView
+            android:id="@+id/named_edit_value_dash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="@string/equals_symbol"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="@dimen/defTextSize" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:minWidth="20dp"
+            android:text="@{valueDeg==null?&quot;&quot;:valueDeg.toString()}"
+            android:textAlignment="textEnd"
+            android:textColor="?attr/colorOnPrimary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/degree_symbol"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:minWidth="20dp"
+            android:text="@{valueMin==null?&quot;&quot;:valueMin.toString()}"
+            android:textAlignment="textEnd"
+            android:textColor="?attr/colorOnPrimary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/min_symbol"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:minWidth="20dp"
+            android:text="@{valueSec==null?&quot;&quot;:valueSec.toString()}"
+            android:textAlignment="textEnd"
+            android:textColor="?attr/colorOnPrimary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sec_symbol"
+            android:textColor="?attr/colorOnPrimary" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

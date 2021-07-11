@@ -5,4 +5,6 @@
     <string name="title_rotationToolHolder" >Угол наклона резцедержателя</string>
     <string name="title_arctg">Угол треугольника</string>
     <string name="SettingsBodyText">Это страница настроек. Скоро здесь что-нибудь появится.</string>
+    <string name="title_triangle">Просчёт треугольника</string>
+    <string name="title_rotation_tool_holder">Угол поворота</string>
 </resources>

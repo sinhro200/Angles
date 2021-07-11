@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_triangle">
+
+    <fragment
+        android:id="@+id/navigation_triangle"
+        android:name="com.sinhro.angles.ui.triangle.TriangleFragment"
+        android:label="@string/title_triangle"
+        tools:layout="@layout/fragment_triangle"
+        app:launchSingleTop="false"
+        >
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.sinhro.angles.ui.settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings"
+        app:launchSingleTop="false"
+        />
+
+    <fragment
+        android:id="@+id/navigation_rotation_tool_holder"
+        android:name="com.sinhro.angles.ui.rotationtoolholder.RotationToolHolderFragment"
+        android:label="@string/title_rotation_tool_holder"
+        tools:layout="@layout/fragment_rotation_tool_holder"
+        app:launchSingleTop="false"
+        />
+</navigation>
