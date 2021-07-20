@@ -3,24 +3,33 @@ package com.sinhro.angles
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.*
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.sinhro.angles.databinding.ActivityMainBinding
 import com.sinhro.angles.storage.Storage
+import com.sinhro.angles.theme.ThemeController
+import com.sinhro.angles.ui.settings.SettingsViewModel
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+    private val settingsViewModel: SettingsViewModel by viewModels()
     lateinit var storage: Storage
+    lateinit var themeController: ThemeController
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         storage = Storage(baseContext)
+        themeController = ThemeController(storage)
+        setTheme(themeController.getTheme())
+
+        super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -28,7 +37,6 @@ class MainActivity : AppCompatActivity() {
         val navView: BottomNavigationView = binding.navView
 
         navController = findNavController(R.id.nav_host_fragment_activity_main)
-
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -42,21 +50,38 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-            when(storage.lastOpenedPage){
-            Storage.Page.RotationToolHolderPage->{
+        //Если в этом же where сделать выделение нужного item в bottomNavView
+        // [ Binding.navView.menu.findItem(R.id.navigation_rotation_tool_holder).isChecked = true ]
+        // оно почему то не работает. Т.е. не выделяет нужный элемент
+        // поэтому выделение нужной вкладки происходит после смены стиля в storage, но до recreate()
+        when (storage.lastOpenedPage) {
+            Storage.Page.RotationToolHolderPage -> {
                 openPage(R.id.navigation_rotation_tool_holder)
             }
-            Storage.Page.TrianglePage->{
+            Storage.Page.TrianglePage -> {
                 openPage(R.id.navigation_triangle)
+            }
+        }
+
+        settingsViewModel.themeId.observe(this) {
+            themeController.setTheme(it) {
+                when (storage.lastOpenedPage) {
+                    Storage.Page.RotationToolHolderPage -> {
+                        binding.navView.menu.findItem(R.id.navigation_rotation_tool_holder).isChecked =
+                            true
+                    }
+                    Storage.Page.TrianglePage -> {
+                        binding.navView.menu.findItem(R.id.navigation_triangle).isChecked = true
+                    }
+                }
+                recreate()
             }
         }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        return super.onCreateOptionsMenu(menu)
-        //todo settings fragment
-//        menuInflater.inflate(R.menu.settings_menu, menu)
-//        return true
+        menuInflater.inflate(R.menu.settings_menu, menu)
+        return true
     }
 
     private fun openPage(resId: Int) {
@@ -65,12 +90,6 @@ class MainActivity : AppCompatActivity() {
             null,
             NavOptions.Builder()
                 .setLaunchSingleTop(true)
-//                        .setRestoreState(true)
-//                        .setPopUpTo(
-//                            navController.graph.findStartDestination().id,
-//                            inclusive = false,
-//                            saveState = true
-//                        )
                 .build()
         )
     }
@@ -79,18 +98,6 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.navigation_settings -> {
                 openPage(R.id.navigation_settings)
-//                navController.navigate(
-//                    R.id.navigation_settings, null,
-//                    NavOptions.Builder()
-//                        .setLaunchSingleTop(true)
-////                        .setRestoreState(true)
-////                        .setPopUpTo(
-////                            navController.graph.findStartDestination().id,
-////                            inclusive = false,
-////                            saveState = true
-////                        )
-//                        .build()
-//                )
                 binding.navView.menu.findItem(R.id.invisible).isChecked = true
                 true
             }
@@ -98,6 +105,4 @@ class MainActivity : AppCompatActivity() {
                 super.onOptionsItemSelected(item)
         }
     }
-
-
 }

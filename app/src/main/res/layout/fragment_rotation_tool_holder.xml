@@ -30,7 +30,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/tool_holder_old" />
+                    app:srcCompat="@drawable/tool_holder_old_opacity" />
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
@@ -73,7 +73,7 @@
             android:layout_marginEnd="2dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:background="?attr/colorPrimary"
+            android:background="?attr/colorPrimarySurface"
             android:orientation="vertical"
             android:padding="4dp"
             app:layout_constraintBottom_toBottomOf="parent"

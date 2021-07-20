@@ -19,7 +19,7 @@ class Storage(private val context: Context) {
 
     var lastOpenedPage: Page
         set(value) {
-            Log.d("Storage","Saving Last_opened_page: ${value.code} (${value.name})")
+            Log.d("Storage", "Saving Last_opened_page: ${value.code} (${value.name})")
             sharedPreferences.edit()
                 .putInt("Last_opened_page", value.code)
                 .apply()
@@ -37,4 +37,21 @@ class Storage(private val context: Context) {
             return _lastOpenedPage
         }
 
+    private var _style: Int = -1
+
+    var themeNum: Int
+        set(value) {
+            Log.d("Storage", "Saving Theme: $value")
+            sharedPreferences.edit()
+                .putInt("Theme", value)
+                .apply()
+            _style = value
+        }
+        get() {
+            if (_style == -1) {
+                val st = sharedPreferences.getInt("Theme", -1)
+                _style = if (st == -1) 1 else st
+            }
+            return _style
+        }
 }

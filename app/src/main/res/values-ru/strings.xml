@@ -7,4 +7,5 @@
     <string name="SettingsBodyText">Скоро будет доступно</string>
     <string name="title_triangle">Просчёт треугольника</string>
     <string name="title_rotation_tool_holder">Угол поворота</string>
+    <string name="theme">Тема</string>
 </resources>

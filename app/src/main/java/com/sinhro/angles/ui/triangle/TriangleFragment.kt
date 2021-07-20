@@ -118,6 +118,9 @@ class TriangleFragment : Fragment() {
         triangleViewModel.b.value?.let {
             binding.namedEditValueB.namedEditValueEditText.setText(it.toPrettyString())
         }
+        triangleViewModel.c.value?.let {
+            binding.namedEditValueC.namedEditValueEditText.setText(it.toPrettyString())
+        }
     }
 
     override fun onDestroyView() {

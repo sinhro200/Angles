@@ -19,4 +19,5 @@
     <string name="degree_symbol" translatable="false">&#176;</string>
     <string name="min_symbol" translatable="false">&#8242;</string>
     <string name="sec_symbol" translatable="false">&#8243;</string>
+    <string name="theme">Theme</string>
 </resources>
