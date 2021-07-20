@@ -18,27 +18,61 @@
         <item name="colorPrimaryDark">#00574B</item>
 
 
-        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondary">#892312</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/teal_700</item>
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
 
-        <item name="android:navigationBarColor" tools:targetApi="lollipop">?attr/colorPrimaryVariant</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">
+            ?attr/colorPrimaryVariant
+        </item>
 
 
         <!-- default color underline edit text        -->
-<!--        <item name="colorControlNormal">#12ff21</item>-->
+        <!--        <item name="colorControlNormal">#12ff21</item>-->
         <!-- selected edit text underline color       -->
-<!--        <item name="colorControlActivated">#876123</item>-->
-<!--        <item name="colorControlHighlight">#007044</item>-->
+        <!--        <item name="colorControlActivated">#876123</item>-->
+        <!--        <item name="colorControlHighlight">#007044</item>-->
 
         <!-- selected edit text underline color       -->
-        <item name="colorAccent">#DD6E42</item>
+        <item name="colorAccent">?attr/colorPrimarySurface</item>
     </style>
 
     <style name="Theme1" parent="Theme.Angles">
+        <item name="android:windowBackground">@color/white</item>
+
+        <!--        <item name="android:textColor">?attr/colorOnSurface</item>-->
+
+        <!-- color of background bottomNavView and actionBar      -->
+        <item name="colorPrimary">#008577</item>
+        <!-- color of background bottomNavView and actionBar dark theme  -->
+        <item name="colorSurface">#008577</item>
+
+        <!-- Color of selected item in BottomNavView      -->
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Color of selected item in BottomNavView dark theme     -->
+        <item name="colorOnSurface">@color/black</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimarySurface</item>
+
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">
+            ?attr/colorPrimaryVariant
+        </item>
+
+        <!-- default color underline edit text        -->
+        <!--        <item name="colorControlNormal">#12ff21</item>-->
+        <!-- selected edit text underline color       -->
+        <!--        <item name="colorControlActivated">#876123</item>-->
+        <!--        <item name="colorControlHighlight">#007044</item>-->
+
+        <!-- selected edit text underline color       -->
+        <!--        <item name="colorAccent">#FFE0B5</item>-->
+    </style>
+
+    <style name="Theme2" parent="Theme.Angles">
         <item name="android:windowBackground">#008577</item>
         <item name="android:textColor">@color/white</item>
 
@@ -53,12 +87,12 @@
         <!-- Color of selected item in BottomNavView dark theme     -->
         <item name="colorOnSurface">@color/white</item>
 
-        <item name="colorPrimaryVariant">#22574B</item>
-
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimarySurface</item>
 
-        <item name="android:navigationBarColor" tools:targetApi="lollipop">?attr/colorPrimaryVariant</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">
+            ?attr/colorPrimaryVariant
+        </item>
 
 
         <!-- default color underline edit text        -->
@@ -68,39 +102,8 @@
         <!--        <item name="colorControlHighlight">#007044</item>-->
 
         <!-- selected edit text underline color       -->
-<!--        <item name="colorAccent">#FFE0B5</item>-->
+        <!--        <item name="colorAccent">#FFE0B5</item>-->
     </style>
 
-    <style name="Theme2" parent="Theme.Angles">
-<!--        <item name="android:windowBackground">@color/white</item>-->
 
-<!--        <item name="android:textColor">?attr/colorOnSurface</item>-->
-
-        <!-- color of background bottomNavView and actionBar      -->
-        <item name="colorPrimary">#008577</item>
-        <!-- color of background bottomNavView and actionBar dark theme  -->
-        <item name="colorSurface">#008577</item>
-
-        <!-- Color of selected item in BottomNavView      -->
-        <item name="colorOnPrimary">@color/white</item>
-        <!-- Color of selected item in BottomNavView dark theme     -->
-        <item name="colorOnSurface">@color/black</item>
-
-        <item name="colorPrimaryVariant">#048072</item>
-
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-
-        <item name="android:navigationBarColor" tools:targetApi="lollipop">?attr/colorPrimaryVariant</item>
-
-
-        <!-- default color underline edit text        -->
-        <!--        <item name="colorControlNormal">#12ff21</item>-->
-        <!-- selected edit text underline color       -->
-        <!--        <item name="colorControlActivated">#876123</item>-->
-        <!--        <item name="colorControlHighlight">#007044</item>-->
-
-        <!-- selected edit text underline color       -->
-<!--        <item name="colorAccent">#FFE0B5</item>-->
-    </style>
 </resources>

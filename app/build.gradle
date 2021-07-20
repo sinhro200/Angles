@@ -9,11 +9,11 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.sinhro.angles2"
+        applicationId "com.sinhro.angles"
         minSdkVersion 16
         targetSdkVersion 30
-        versionCode 1
-        versionName "2.0"
+        versionCode 3
+        versionName "2.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -23,17 +23,17 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            /*applicationVariants.all { variant ->
-                variant.outputs.all {
-                    outputFileName = "${applicationName}_${variant.buildType.name}_${defaultConfig.versionName}.apk"
-                }
-            }*/
         }
         debug {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "Angles-v${variant.versionName}.apk"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8

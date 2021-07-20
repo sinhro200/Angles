@@ -38,13 +38,19 @@
                 android:id="@+id/radio_button_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1" />
+                android:text="1"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="@dimen/defTextSize"
+                />
 
             <RadioButton
                 android:id="@+id/radio_button_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2" />
+                android:text="2"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="@dimen/defTextSize"
+                />
         </RadioGroup>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

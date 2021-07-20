@@ -44,11 +44,14 @@ class TriangleViewModel : ViewModel() {
         A, B, C;
     }
 
+    private val _isError = MutableLiveData<Boolean>()
+    val isError: LiveData<Boolean> = _isError
+
     private val queue = LinkedList<EnteredField>()
     private var changedProgrammatically = false
 
     private val _calculatingField = MutableLiveData<EnteredField>()
-    val lastCalculatedField : LiveData<EnteredField> = _calculatingField
+    val lastCalculatedField: LiveData<EnteredField> = _calculatingField
 
 
     private val _alpha = MutableLiveData<Float?>()
@@ -95,7 +98,7 @@ class TriangleViewModel : ViewModel() {
                 queue.addFirst(EnteredField.C)
                 if (queue.size > 2)
                     queue.removeLast()
-            }else if (_c.value == null && _b.value != null) {
+            } else if (_c.value == null && _b.value != null) {
                 queue.addFirst(EnteredField.B)
                 if (queue.size > 2)
                     queue.removeLast()
@@ -127,7 +130,7 @@ class TriangleViewModel : ViewModel() {
                 queue.addFirst(EnteredField.C)
                 if (queue.size > 2)
                     queue.removeLast()
-            }else if (_c.value == null && _a.value != null) {
+            } else if (_c.value == null && _a.value != null) {
                 queue.addFirst(EnteredField.A)
                 if (queue.size > 2)
                     queue.removeLast()
@@ -158,7 +161,7 @@ class TriangleViewModel : ViewModel() {
                 queue.addFirst(EnteredField.B)
                 if (queue.size > 2)
                     queue.removeLast()
-            }else if (_b.value == null && _a.value != null) {
+            } else if (_b.value == null && _a.value != null) {
                 queue.addFirst(EnteredField.A)
                 if (queue.size > 2)
                     queue.removeLast()
@@ -170,7 +173,6 @@ class TriangleViewModel : ViewModel() {
     }
 
     private fun checkReadyAndCalc() {
-        println(queue.joinToString(separator = ","))
         val a: Float
         val b: Float
         val c: Float
@@ -192,6 +194,7 @@ class TriangleViewModel : ViewModel() {
                 a = _a.value!!
                 b = _b.value!!
                 c = sqrt((a * a + b * b).toDouble()).toFloat()
+                _isError.postValue(c.isNaN())
                 changedProgrammatically = true
                 _c.value = c
                 _cText.postValue(c.toPrettyString())
@@ -209,9 +212,11 @@ class TriangleViewModel : ViewModel() {
                     _cText.postValue("")
                     return
                 }
+
                 a = _a.value!!
                 c = _c.value!!
                 b = sqrt((c * c - a * a).toDouble()).toFloat()
+                _isError.postValue(b.isNaN())
                 changedProgrammatically = true
                 _b.value = b
                 _bText.postValue(b.toPrettyString())
@@ -232,6 +237,7 @@ class TriangleViewModel : ViewModel() {
                 b = _b.value!!
                 c = _c.value!!
                 a = sqrt((c * c - b * b).toDouble()).toFloat()
+                _isError.postValue(a.isNaN())
                 changedProgrammatically = true
                 _a.value = a
                 _aText.postValue(a.toPrettyString())

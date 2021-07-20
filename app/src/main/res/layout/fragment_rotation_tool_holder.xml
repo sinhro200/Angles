@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
+
     <data>
 
     </data>
@@ -30,7 +29,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/tool_holder_old_opacity" />
+                    app:srcCompat="@drawable/tool_holder_new_opacity" />
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
@@ -48,18 +47,21 @@
                     <include
                         android:id="@+id/named_edit_value_big_D"
                         layout="@layout/named_edit_value"
+                        app:isError="@{false}"
                         app:isLastEdit="@{false}"
                         app:valueTitle="@{&quot;D&quot;}" />
 
                     <include
                         android:id="@+id/named_edit_value_d"
                         layout="@layout/named_edit_value"
+                        app:isError="@{false}"
                         app:isLastEdit="@{false}"
                         app:valueTitle="@{ @string/d_sideOfToolHolder }" />
 
                     <include
                         android:id="@+id/named_edit_value_L"
                         layout="@layout/named_edit_value"
+                        app:isError="@{false}"
                         app:isLastEdit="@{true}"
                         app:valueTitle="@{ @string/L_sideOfToolHolder }" />
 

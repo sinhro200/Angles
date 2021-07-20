@@ -53,16 +53,17 @@
             android:minWidth="20dp"
             android:text="@{valueDeg==null?&quot;&quot;:valueDeg.toString()}"
             android:textAlignment="textEnd"
-            android:textColor="?attr/colorOnPrimary" />
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="@dimen/bigTextSize" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/degree_symbol"
-            android:textColor="?attr/colorOnPrimary"
             android:layout_marginEnd="4dp"
             android:layout_marginRight="4dp"
-            />
+            android:text="@string/degree_symbol"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="@dimen/defTextSize"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -71,15 +72,17 @@
             android:minWidth="20dp"
             android:text="@{valueMin==null?&quot;&quot;:valueMin.toString()}"
             android:textAlignment="textEnd"
-            android:textColor="?attr/colorOnPrimary" />
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="@dimen/bigTextSize" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/min_symbol"
-            android:textColor="?attr/colorOnPrimary"
             android:layout_marginEnd="4dp"
             android:layout_marginRight="4dp"
+            android:text="@string/min_symbol"
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="@dimen/defTextSize"
             />
 
         <TextView
@@ -89,12 +92,14 @@
             android:minWidth="20dp"
             android:text="@{valueSec==null?&quot;&quot;:valueSec.toString()}"
             android:textAlignment="textEnd"
-            android:textColor="?attr/colorOnPrimary" />
+            android:textColor="?attr/colorOnPrimary"
+            android:textSize="@dimen/bigTextSize" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sec_symbol"
+            android:textSize="@dimen/defTextSize"
             android:textColor="?attr/colorOnPrimary" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

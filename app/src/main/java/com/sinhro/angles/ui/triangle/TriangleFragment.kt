@@ -54,8 +54,23 @@ class TriangleFragment : Fragment() {
         })
         triangleViewModel.cText.observe(viewLifecycleOwner, {
             binding.namedEditValueC.namedEditValueEditText.setText(it)
-
         })
+
+        triangleViewModel.isError.observe(viewLifecycleOwner) {
+            binding.namedEditValueA.isError = false
+            binding.namedEditValueB.isError = false
+            binding.namedEditValueC.isError = false
+            if (it) {
+                when (triangleViewModel.lastCalculatedField.value) {
+                    TriangleViewModel.EnteredField.A ->
+                        binding.namedEditValueA.isError = true
+                    TriangleViewModel.EnteredField.B ->
+                        binding.namedEditValueB.isError = true
+                    TriangleViewModel.EnteredField.C ->
+                        binding.namedEditValueC.isError = true
+                }
+            }
+        }
 
         triangleViewModel.lastCalculatedField.observe(viewLifecycleOwner) {
             it?.let {

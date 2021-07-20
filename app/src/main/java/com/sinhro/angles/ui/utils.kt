@@ -11,8 +11,8 @@ fun Float.toPrettyString(maxSymbolsAfterPoint: Int = 3): String {
     if (this.isFinite()) {
         val nf: NumberFormat = NumberFormat.getNumberInstance(Locale.ENGLISH)
         nf.maximumFractionDigits = maxSymbolsAfterPoint
-        val rounded: String = nf.format(this)
-        rounded.replace(',', '.')
+        var rounded: String = nf.format(this)
+        rounded = rounded.replace(",","")
         return rounded
     } else {
         return ""

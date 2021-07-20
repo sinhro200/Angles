@@ -47,18 +47,21 @@
                     <include
                         android:id="@+id/named_edit_value_a"
                         layout="@layout/named_edit_value"
+                        app:isError="@{false}"
                         app:isLastEdit="@{false}"
                         app:valueTitle="@{&quot;a&quot;}" />
 
                     <include
                         android:id="@+id/named_edit_value_b"
                         layout="@layout/named_edit_value"
+                        app:isError="@{false}"
                         app:isLastEdit="@{false}"
                         app:valueTitle="@{ @string/b_sideOfTriangle }" />
 
                     <include
                         android:id="@+id/named_edit_value_c"
                         layout="@layout/named_edit_value"
+                        app:isError="@{false}"
                         app:isLastEdit="@{false}"
                         app:valueTitle="@{ &quot;c&quot; }" />
 
@@ -77,11 +80,6 @@
             android:padding="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
-
-<!--            <include-->
-<!--                android:id="@+id/fragment_triangle_c_layout"-->
-<!--                layout="@layout/named_value"-->
-<!--                app:valueTitle="@{@string/c_sideOfTriangle}" />-->
 
             <include
                 android:id="@+id/fragment_triangle_alpha_layout"

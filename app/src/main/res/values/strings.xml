@@ -20,4 +20,5 @@
     <string name="min_symbol" translatable="false">&#8242;</string>
     <string name="sec_symbol" translatable="false">&#8243;</string>
     <string name="theme">Theme</string>
+    <string name="error">Error</string>
 </resources>
